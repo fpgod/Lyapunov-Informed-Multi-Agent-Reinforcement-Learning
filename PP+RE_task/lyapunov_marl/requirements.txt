@@ -1,0 +1,16 @@
+scipy
+setproctitle
+numpy
+torch
+gym
+wandb
+matplotlib
+seaborn
+tensorboard
+tensorboardX
+tensorflow
+rsa
+PyYAML
+pandas
+imageio
+keras

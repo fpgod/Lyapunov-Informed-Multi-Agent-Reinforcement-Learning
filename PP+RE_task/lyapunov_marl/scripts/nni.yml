@@ -1,0 +1,38 @@
+experimentName: mujoco_5e-6
+searchSpace:
+  env:
+    _type: choice
+    _value: ["humanoidstandup-17x1", "walker-2x3", "halfcheetah-2x3"]
+  algorithm:
+    _type: choice
+    _value: ["mappo_fgsm", "mappo_iclr", "mappo_usenix", "mappo_icml", "mappo_advinf"]
+  ctrl:
+    _type: choice
+    _value: [0]
+  advinf_param:
+    _type: choice
+    _value: [0, 0.1, 0.3, 1, 3, 10]
+  lr:
+    _type: choice
+    _value: [0.000005] #[0.000005, 0.00005, 0.0005, 0.005]
+  seed:
+    _type: choice
+    _value: [1, 2, 3, 4, 5]
+  epsilon_state:
+    _type: choice
+    _value: [0, 0.1] #[0.01, 0.05, 0.1, 0.5, 1]
+  epsilon_action:
+    _type: choice
+    _value: [0, 0.1] #[0.01, 0.05, 0.1, 0.5, 1]
+trialCommand: sh nni_adv_mujoco.sh
+trialCodeDirectory: .
+trialGpuNumber: 1
+trialConcurrency: 12
+maxTrialNumber: 1800
+tuner:
+  name: GridSearch
+trainingService:
+  platform: local
+  useActiveGpu: True
+  maxTrialNumberPerGpu: 3
+  gpuIndices: [0, 1, 2, 3]
