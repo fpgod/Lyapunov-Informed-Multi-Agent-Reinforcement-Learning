@@ -62,18 +62,6 @@ We propose a novel MARL framework that leverages Lyapunov-based stability princi
 
 ---
 
-## 📁 Project Structure
-
-```
-├── algorithms/              # MARL algorithms including LYN variants
-├── envs/                    # Environments and wrappers
-├── train.py                 # Main training entry
-├── configs/                 # Experiment YAML config files
-├── utils/                   # Utilities and tools
-└── README.md                # Project readme
-```
-
----
 
 
 
