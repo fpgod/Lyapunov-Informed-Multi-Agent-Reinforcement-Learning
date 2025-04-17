@@ -42,18 +42,20 @@ We propose a novel MARL framework that leverages Lyapunov-based stability princi
 
 ### MADDPG / MATD3 and their LYN variants
 
-| Hyperparameter               | Value                              |
-|-----------------------------|------------------------------------|
-| Recurrent data chunk length | 10                                 |
-| Gradient clip norm          | 10.0                               |
-| GAE lambda                  | 0.95                               |
-| Discount factor (gamma)     | 0.99                               |
-| Value loss                  | Huber loss                         |
-| Huber delta                 | 10.0                               |
-| Optimizer                   | Adam                               |
-| Optimizer epsilon           | 1e-5                               |
-| Weight decay                | 0                                  |
-| Network initialization      | Orthogonal                         |
+| Hyperparameter         | Value              |
+|------------------------|--------------------|
+| Gradient clip norm     | 10.0               |
+| Random episodes        | 5                  |
+| Epsilon                | 1 → 0.05           |
+| Epsilon anneal time    | 50000 timesteps    |
+| Train interval         | 1 episode          |
+| Gamma                  | 0.99               |
+| Buffer size            | 5000 episodes      |
+| Batch size             | 32 episodes        |
+| Optimizer eps          | 1e-5               |
+| Optimizer              | Adam               |
+| Weight decay           | 0                  |
+| Network initialization | Orthogonal         |
 | Learning rate               | 0.0005                             |
 | Beta (β)                    | 100 (PP), 600 (RE), 300 (CA)       |
 |                             | 10 (SMAC), 100 (CC)                |
